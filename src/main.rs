@@ -1,4 +1,6 @@
 fn main() {
+    use std::io;
+    use std::io::prelude::*;
     use base64::{encode};
     use rand::rngs::{OsRng};
     use rand::{RngCore};
@@ -17,4 +19,13 @@ fn main() {
     // Encode and print the vecs
     println!("Key: {}", encode(&key));
     println!("IV: {}", encode(&iv));
+
+    // Wait for user to hit enter before we exit
+    let mut stdin = io::stdin();
+    let mut stdout = io::stdout();
+
+    write!(stdout, "Press enter to exit...").unwrap();
+    stdout.flush().unwrap();
+
+    let _ = stdin.read(&mut [0u8]).unwrap();
 }
