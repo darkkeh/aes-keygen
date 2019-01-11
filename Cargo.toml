@@ -1,0 +1,7 @@
+[package]
+name = "aes-keygen"
+version = "0.1.0"
+authors = ["darkyshiny <darkyshiny@hotmail.com>"]
+edition = "2018"
+
+[dependencies]
