@@ -5,3 +5,5 @@ authors = ["darkyshiny <darkyshiny@hotmail.com>"]
 edition = "2018"
 
 [dependencies]
+base64 = "0.10.0"
+rand = "0.6.4"
