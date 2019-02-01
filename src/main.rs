@@ -8,15 +8,15 @@ fn main() {
     // Get randomness straight from the operating system
     let mut gen = OsRng::new().ok().expect("Failed to get OS random generator");
 
-    // Create vec for key and iv containing only 0s until a certain length
-    let mut key = vec![0; 32];
-    let mut iv = vec![0; 16];
+    // Create arrays for key and iv
+    let mut key = [0; 32];
+    let mut iv = [0; 16];
 
-    // Fill vecs with random values
-    gen.fill_bytes(key.as_mut_slice());
-    gen.fill_bytes(iv.as_mut_slice());
+    // Fill arrays with random values
+    gen.fill_bytes(&mut key[..]);
+    gen.fill_bytes(&mut iv[..]);
 
-    // Encode and print the vecs
+    // Encode and print the arrays
     println!("Key: {}", encode(&key));
     println!("IV: {}", encode(&iv));
 
